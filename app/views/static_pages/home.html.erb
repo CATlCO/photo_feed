@@ -1,2 +1,18 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Insert flickr id</h1>
+<%= form_tag(root_url, method: "get") do %>
+	<%= text_field_tag :id %>
+	<%= submit_tag "Submit" %>
+<% end %>
+<h5>or try some of these</h5>
+<%= link_to "47776579@N08", root_url(id: "47776579@N08"), method: "get" %>
+<%= link_to "75034991@N05", root_url(id: "75034991@N05"), method: "get" %>
+<%= link_to "10853447@N06", root_url(id: "10853447@N06"), method: "get" %>
+<%= link_to "27838818@N04", root_url(id: "27838818@N04"), method: "get" %>
+<%= link_to "65516775@N02", root_url(id: "65516775@N02"), method: "get" %>
+<%= link_to "65942669@N05", root_url(id: "65942669@N05"), method: "get" %>
+<%= link_to "63102190@N07", root_url(id: "63102190@N07"), method: "get" %>
+<div>
+	<% cache('flickr_sidebar') do %>
+		<%= render_flickr_sidebar(@id) %>
+	<% end %>
+</div>

@@ -18,3 +18,4 @@
 
 # Ignore application configuration
 /config/flickr.yml
+/config/application.yml
